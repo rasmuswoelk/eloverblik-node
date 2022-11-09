@@ -8,9 +8,9 @@ import { getReport } from './report.js';
 
 dotenv.config();
 
-const START_DATE = '2021-01-01';
+const START_DATE = process.env.DEFAULT_START_DATE;
 const END_DATE = format(new Date(), 'yyyy-MM-dd');
-const METERING_POINT_ID = "571313161101176868"
+const METERING_POINT_ID = process.env.METERING_POINT_ID;
 
 const run = async () => {
   // Connect to mongodb
