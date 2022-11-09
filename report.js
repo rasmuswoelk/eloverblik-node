@@ -9,6 +9,10 @@ export const getReport = async () => {
   await connect()
   const entries = await Entry.find().sort('start');
 
+  if (!entries.length) {
+    return;
+  }
+
   console.log(`Found ${entries.length} days – From ${format(entries[0].start, 'dd-MM-yyyy')} to ${format(entries[entries.length - 1].end, 'dd-MM-yyyy')}`);
   console.log('\n');
   console.log('Price per kWh: ', KWH_PRICE, 'DKK');

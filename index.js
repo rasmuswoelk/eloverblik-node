@@ -35,6 +35,7 @@ const run = async () => {
     }
   }
 
+  console.log(from)
   // No from; abort
   if (!from) {
     console.log('No new entries; skipping');
@@ -74,7 +75,7 @@ const run = async () => {
           ] 
         } 
       } = response;
-  
+
       // Parse data
       const entries = days.map(({ timeInterval: { start, end }, Point }) => {
         const hours = Point.map(hour => {
@@ -103,7 +104,7 @@ const run = async () => {
         console.log('Created entries in database')
       }
     } catch (error) {
-      console.log('Error', error)
+      console.log('Error', error.toString())
     }
   }
 
