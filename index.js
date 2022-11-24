@@ -35,7 +35,6 @@ const run = async () => {
     }
   }
 
-  console.log(from)
   // No from; abort
   if (!from) {
     console.log('No new entries; skipping');
